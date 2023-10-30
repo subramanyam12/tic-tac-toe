@@ -5,9 +5,7 @@ const cross=[0,0,0,0,0,0,0,0,0]
 const round=[0,0,0,0,0,0,0,0,0]
 const store=[]
 
-const Board = ({bool,setoutbool,settie}) => {
-  // const [cross, setcross] = useState([0,0,0,0,0,0,0,0,0])
-  // const [round, setround] = useState([0,0,0,0,0,0,0,0,0])
+const Board = ({bool,setbool,setoutbool,settie}) => {
 
   const [ross, setross] = useState(null)
   const [index, setindex] = useState(null)
@@ -22,6 +20,7 @@ const Board = ({bool,setoutbool,settie}) => {
      wins.forEach(win=>{
       if(list[win[0]]+list[win[1]]+list[win[2]]===3){
         setoutbool(false)
+        setbool(ross)
         flag=true
        }
       })

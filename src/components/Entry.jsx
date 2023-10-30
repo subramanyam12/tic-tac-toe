@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
-const Entry = ({setbool,outbool,tie}) =>{
+const Entry = ({bool,setbool,outbool,tie}) =>{
     const [entrybool, setentrybool] = useState(true)
     const [outtbool, setouttbool] = useState(false)
 
@@ -24,6 +24,7 @@ const Entry = ({setbool,outbool,tie}) =>{
         setouttbool(true)
         setTimeout(()=>window.location.reload(),100)
     }
+    
 
   return (
      <>
@@ -40,7 +41,7 @@ const Entry = ({setbool,outbool,tie}) =>{
             </>
            ):(
              <div className='flex flex-col gap-3 items-center '>
-               <p className='text-2xl text-center font-bold'>{tie ? 'Congratulations You won the Game':'Game is Tie'}</p>
+               <p className='text-2xl text-center font-bold'>{tie ? <span>Congratulations {bool ?<span className='rounded-lg bg-gray-600 text-[rgb(18,190,233)] border-[1px] border-white px-2'>X</span>:<span className=' text-[rgb(103,245,90)] rounded-lg bg-gray-600 border-[1px] border-white px-2'>O</span> } won the Game</span>:<span>Game is Tie</span>}</p>
                  <button onClick={load} className='font-bold text-xl w-[25vmin] p-1 bg-blue-700'>Reset</button>
              </div>
              )}

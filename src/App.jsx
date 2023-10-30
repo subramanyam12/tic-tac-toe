@@ -8,12 +8,13 @@ function App() {
 const [bool, setbool] = useState(null)
 const [outbool, setoutbool] = useState(true)
 const [tie, settie] = useState(true)
- 
+
+
   return (
     <>
-      <Entry setbool={setbool} outbool={outbool} tie={tie} />
+      <Entry setbool={setbool} bool={bool} outbool={outbool} tie={tie} />
     <div className='flex flex-col gap-7 items-center justify-center h-[100vh]'> 
-      <Board bool={bool} setoutbool={setoutbool} settie={settie} />
+      <Board bool={bool} setbool={setbool} setoutbool={setoutbool} settie={settie} />
     </div>
     </>
   )
